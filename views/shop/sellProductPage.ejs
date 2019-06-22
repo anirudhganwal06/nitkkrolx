@@ -1,0 +1,40 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/loginForm.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxLeft" href="/<%= student.rollNo %>"> Home </a>
+        <a class="userInfoPanelBoxRight" href="/<%= student.rollNo %>/logout"> Logout </a>
+        <a class="userInfoPanelBoxRight" href="/<%= student.rollNo %>/personal-info"> <%= student.name %> </a>
+
+    </div>
+    <div id="loginForm">
+        <h1>Sell Product</h1>
+        <form action="/<%= student.rollNo %>/sell" method="POST" enctype="multipart/form-data">
+            <div class="inputBox">
+                <input type="text" name="title" required>
+                <label>Product Name</label>
+            </div>
+            <div class="inputBox">
+                <input type="file" style="padding: 2px" name="image" required>
+                <label>Product Image</label>
+            </div>
+            <div class="inputBox">
+                <input type="text" value="<%= student.mobile %>" name="mobile" required>
+                <label>Mobile Number</label>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="details" required>
+                <label>Product Details</label>
+            </div>
+            <div class="inputBox">
+                <input type="number" name="price" step="0.01" required>
+                <label>Product's Price</label>
+            </div>
+            <input type="text" name="rollNo" step="0.01" value="<%= student.rollNo %>" hidden>            
+            <div class="inputBox">
+                <input type="submit" value="UPLOAD FOR SALE">
+            </div>
+        </form>
+    </div>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,35 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/loginForm.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxLeft" href="/<%= rollNo %>"> Home </a>
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/logout"> Logout </a>
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/personal-info"> <%= name %> </a>
+
+    </div>
+    <div id="loginForm">
+        <h1>Sell Product</h1>
+        <form action="/<%= rollNo %>/product/<%= product.uniqid %>/edit" method="POST" enctype="multipart/form-data">
+            <div class="inputBox">
+                <input type="text" name="title" value="<%= product.title %>" required>
+                <label>Product Name</label>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="mobile" value="<%= product.mobile %>" required>
+                <label>Mobile Number</label>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="details" value="<%= product.details %>" required>
+                <label>Product Details</label>
+            </div>
+            <div class="inputBox">
+                <input type="number" name="price" step="0.01" value="<%= product.price %>" required>
+                <label>Product's Price</label>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="EDIT AND SAVE">
+            </div>
+        </form>
+    </div>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,22 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/loginForm.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/logout"> Logout </a>
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/personal-info"> <%= name %> </a>
+    </div>
+    <div id="buySell">
+        <a href="/<%= rollNo %>/buy">
+                BUY
+        </a>
+        <a href="/<%= rollNo %>/sell">
+                SELL
+        </a>    
+    </div>
+    <div id="buySell">
+        <a href="/<%= rollNo %>/items-out-for-sale">
+			ITEMS OUT FOR SALE
+        </a>    
+    </div>
+<%- include('../includes/end.ejs') %>

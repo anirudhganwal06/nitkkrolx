@@ -1,0 +1,59 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/loginForm.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxLeft" href="/"> Home </a>        
+        <a class="userInfoPanelBoxRight" href="/<%= student.rollNo %>/logout"> Logout </a>
+        <a class="userInfoPanelBoxRight" href="/<%= student.rollNo %>/personal-info"> <%= student.name %> </a>
+    </div>
+    <div id="loginForm">
+        <h1>Update Personal Information</h1>
+        <br>
+        <h2>Roll Number : <%= student.rollNo %></h2>
+        <form action="/<%= student.rollNo %>/update-personal-info" method="POST">
+            <div class="inputBox">
+                <input type="text" name="name" value="<%= student.name %>" required>
+                <label >Name</label>
+            </div> 
+            <div class="inputBox">
+                <select name="programme" value="<%= student.programme %>">
+                    <% if (student.programme == "B.Tech.") { %>
+                        <option value="B.Tech." selected>B.Tech.</option>
+                    <% } else { %>
+                        <option value="B.Tech.">B.Tech.</option>
+                    <% } %>    
+                    <% if (student.programme == "M.Tech.") { %>
+                        <option value="M.Tech." selected>M.Tech.</option>
+                    <% } else { %>
+                        <option value="M.Tech.">M.Tech.</option>
+                    <% } %>  
+                    <% if (student.programme == "M.B.A.") { %>
+                        <option value="M.B.A." selected>M.B.A.</option>
+                    <% } else { %>
+                        <option value="M.B.A.">M.B.A.</option>
+                    <% } %>
+                    <% if (student.programme == "M.C.A.") { %>
+                        <option value="M.C.A." selected>M.C.A.</option>
+                    <% } else { %>
+                        <option value="M.C.A.">M.C.A.</option>
+                    <% } %>  
+                </select>
+                <label >Programme</label>
+            </div> 
+            <div class="inputBox">
+                <input type="text" name="mobile" value="<%= student.mobile %>" required>
+                <label >Mobile Number</label>
+            </div>
+            <div class="inputBox">
+                <input type="email" name="email" value="<%= student.email %>" required>
+                <label >Email Id</label>
+            </div> 
+            <div class="inputBox">
+                <input type="number" name="semester" value="<%= student.semester %>" required>
+                <label >Semester</label>
+            </div>           
+            <input type="submit" id="submitBtn" value="UPDATE INFO">
+        </form>
+    </div>
+<%- include('../includes/end.ejs') %>

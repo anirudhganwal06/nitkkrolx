@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: arial;
+}
+
+#mainPageNavbar {
+    position: sticky;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#mainPageNavbar h1 {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+}
+
+#userInfoPanel {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    background-color: rgb(99, 90, 90);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.userInfoPanelBoxLeft {
+    position: relative;
+    float: left;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+
+.userInfoPanelBoxRight {
+    position: relative;
+    float: right;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+
+.userInfoPanelBoxRight:hover,
+.userInfoPanelBoxLeft:hover {
+    color: rgb(226, 226, 226);
+}
+
+#buySell {
+    position: relative;
+    margin: 20px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    background-color: rgb(230, 230, 230);
+}
+
+#buySell a {
+    flex: 1;
+    font-size: 60px;
+    padding: 20px;
+    font-family: monospace;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+    transition: 0.5s;
+}
+
+#buySell a:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(192, 192, 192);
+}
+
+.submitBtn {
+    margin: 50px;
+    padding: 10px;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}

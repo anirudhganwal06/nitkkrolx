@@ -1,0 +1,71 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/loginForm.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxLeft" href="/"> Home </a>        
+        <a class="userInfoPanelBoxRight" href="/login"> Login </a>
+    </div>
+    <div id="loginForm">
+        <h1>Signup</h1>
+        <form action="/signup" method="POST">
+            <div class="inputBox">
+                <input type="text" name="rollNo" required>
+                <label>Roll Number</label>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="name" required>
+                <label >Name</label>
+            </div> 
+            <div class="inputBox">
+                <select name="programme">
+                    <option value="B.Tech.">B.Tech.</option>
+                    <option value="M.Tech.">M.Tech.</option>
+                    <option value="M.B.A.">M.B.A.</option>
+                    <option value="M.C.A.">M.C.A.</option>
+                </select>
+                <label >Programme</label>
+            </div> 
+            <div class="inputBox">
+                <input type="text" name="mobile" required>
+                <label >Mobile Number</label>
+            </div>
+            <div class="inputBox">
+                <input type="email" name="email" required>
+                <label >Email Id</label>
+            </div> 
+            <div class="inputBox">
+                <input type="number" name="semester" required>
+                <label >Semester</label>
+            </div>           
+            <div class="inputBox">
+                <input type="password" name="password" id="password" onkeyup="passwordMatch();" required>
+                <label >Password</label>
+            </div> 
+            <div class="inputBox">
+                <input type="password" name="confirmPassword" id="confirmPassword" onkeyup="passwordMatch();" required>
+                <label >Confirm Password</label>
+            </div>
+            <p id="passwordFlash" style="color: red">Password Not Entered!</p>
+            <input type="submit" id="submitBtn" value="SIGN UP" disabled>
+        </form>
+    </div>
+    <script>
+        let confirm;
+        let passwordMatch = () => {
+            if (document.getElementById('password').value == "" && document.getElementById('confirmPassword').value == "") {
+                document.getElementById('passwordFlash').innerHTML = 'Password Not Entered!';
+                document.getElementById('passwordFlash').style.color = 'red';
+                document.getElementById('submitBtn').disabled = true;
+            } else if (document.getElementById('password').value == document.getElementById('confirmPassword').value) {
+                document.getElementById('passwordFlash').innerHTML = 'Password matched!';
+                document.getElementById('passwordFlash').style.color = 'green';
+                document.getElementById('submitBtn').disabled = false;
+            } else {
+                document.getElementById('passwordFlash').innerHTML = 'Password not matched!';
+                document.getElementById('passwordFlash').style.color = 'red';
+                document.getElementById('submitBtn').disabled = true;
+            }
+        }
+    </script>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,24 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/loginForm.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxLeft" href="/"> Home </a>
+        <a class="userInfoPanelBoxRight" href="/signup"> Sign Up </a>
+    </div>
+    <div id="loginForm">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <div class="inputBox">
+                <input type="text" name="rollNo">
+                <label>Roll Number</label>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password">
+                <label>Password</label>
+            </div>
+            <input type="submit" value="LOG IN">
+        </form>
+    </div>
+<%- include('../includes/end.ejs') %>
+

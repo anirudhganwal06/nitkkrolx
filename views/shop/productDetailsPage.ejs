@@ -1,0 +1,47 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/user.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxLeft" href="/<%= rollNo %>"> Home </a>
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/logout"> Logout </a>
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/personal-info"> <%= name %> </a>
+    </div>
+    <div class="userPersonalInfoBox">
+        <h1><%= product.title %></h1>
+        <img src="/images/<%= product.uniqid %>" style="height: 400px; width: 600px">
+        <table>
+            <tr>
+                <td>Details</td>
+                <td>:</td>
+                <td><%= product.details %></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>:</td>
+                <td><%= product.price %></td>
+            </tr>
+            <tr>
+                <td>Seller's Name</td>
+                <td>:</td>
+                <td><%= seller.name %></td>
+            </tr>
+            <tr>
+                <td>Seller's Roll number</td>
+                <td>:</td>
+                <td><%= seller.rollNo %></td>
+            </tr>
+            <tr>
+                <td>Contact Number</td>
+                <td>:</td>
+                <td><%= product.mobile %></td>
+            </tr>
+            <tr>
+                <td>Email id</td>
+                <td>:</td>
+                <td><%= seller.email %></td>
+            </tr>
+        </table>
+        
+    </div>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,23 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/itemsOutForSale.css"> 
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <div id="userInfoPanel">
+        <a class="userInfoPanelBoxLeft" href="/<%= rollNo %>"> Home </a>
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/logout"> Logout </a>
+        <a class="userInfoPanelBoxRight" href="/<%= rollNo %>/personal-info"> <%= name %> </a>        
+    </div>
+    <div id="allProducts">
+        <% for (let product of products) { %>
+            <div class="productBox" href="/<%= rollNo %>/product/<%= product.uniqid %>/details">
+                <h1 class="titleOfProduct"><%= product.title %></h1>
+                <img class="imageOfProduct" src="/images/<%= product.uniqid %>">
+                <h1 class="priceOfProduct">Rs.<%= product.price %></h1>
+                <div class="editDelete">
+                    <a href="/<%= rollNo %>/product/<%= product.uniqid %>/edit">EDIT</a>
+                    <a href="/<%= rollNo %>/product/<%= product.uniqid %>/delete">DELETE</a>
+                </div>  
+            </div>
+        <% } %>
+    </div>
+<%- include('../includes/end.ejs') %>
